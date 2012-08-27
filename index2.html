@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>E-mail Invite Form Demo</title>
+  <meta name="author" content="Jake Rocheleau">
+  <link rel="shortcut icon" href="http://designm.ag/favicon.ico">
+  <link rel="icon" href="http://designm.ag/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<h3>We are releasing something soon...</h3>
+		
+		<h1>Get Early Invite Access!</h1>
+		
+		<div id="maincontent" class="clearfix">
+			<div id="email-icon"><img src="img/email-envelope.png" alt="email updates" /></div>
+			
+			<p>Lend us your e-mail and we'll keep you in touch on our product launch. And we promise <strong>no</strong> spam!</p>
+			
+			<div id="completeform">
+				<span id="error"></span>
+				
+				<form id="inviteform" name="inviteform" method="post" action="#">
+					<input type="email" name="email" id="email" placeholder="E-mail address" autocomplete="off" autocorrect="off" autocapitalize="off">
+					
+					<div id="btnwrap"><button name="sendbtn" id="sendbtn" type="submit" value="Send">Send</button></div>
+				</form>
+			</div>
+		</div>
+		<!-- @end main content wrapper -->
+	</div>
+	
+	<!-- impt javascript codes here -->
+	<script type="text/javascript">
+		function isEmail(email) {
+			// pass regex for validating an e-mail address
+  			var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  			return regex.test(email);
+		}
+		
+		function completeInviteForm() {
+			setTimeout(function() { $("#completeform").fadeOut(400, function(){
+				$(this).before('<span class="msg">All set! We will be in touch.</span>');
+			});
+			}, 1100);
+		}
+		
+		var erdiv    = $("#error");
+		var btnwrap  = $("#btnwrap");
+		
+		
+		$(document).ready(function(){
+			$("#sendbtn").live("click", function(e){
+				// once the send button is clicked we perform some functions
+				// and setup a few variables
+				e.preventDefault();
+				var emailval = $("#email").val();
+				
+				
+				if(!isEmail(emailval)) {
+					erdiv.html("enter a full e-mail address!");
+					erdiv.css("display", "block");
+				}
+				
+				if(isEmail(emailval)) { // email address looks good!
+					erdiv.css("color", "#719dc8");
+					erdiv.html("just a sec...");
+					btnwrap.html('<img src="img/loader.gif" alt="loading">');
+					(completeInviteForm(), 900);
+				}
+			});
+		});
+	</script>
+</body>
+</html>
