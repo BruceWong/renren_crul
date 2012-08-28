@@ -1,8 +1,8 @@
 <?php
 $login_url = 'http://www.renren.com/PLogin.do';
 
-$post_fields['email'] = 'xxx@yahoo.com.cn';
-$post_fields['password'] = 'xxxx';
+$post_fields['email'] = 'xxxxx@xxxx';
+$post_fields['password'] = 'xxxxx';
 $post_fields['origURL'] = 'http://www.renren.com';
 $post_fields['domain'] = 'renren.com';
 //cookie文件存放在网站根目录的temp文件夹下

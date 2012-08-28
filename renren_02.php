@@ -5,9 +5,9 @@ set_time_limit(0);
 !extension_loaded('curl') && exit('CURL扩展未加载，程序终止运行');
 
 //设置登录校内的用户名
-define('email','xahuo@yahoo.com.cn');
+define('email','xxxxx@xxxxx');
 //设置密码
-define('password','brucexie7392');
+define('password','xxxxx');
 //登录页面
 define('LOGIN_PAGE','http://www.renren.com/PLogin.do');
 //首页

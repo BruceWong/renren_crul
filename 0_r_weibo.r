@@ -188,8 +188,8 @@ return(weibo_data[1:min(as.numeric(number), N)])
 
 
 # 登录
-ch0 <- f_weibo_login('ahuo@hotmail.com', '123456789123456')
-ch1 <- f_weibo_login('xuefanghu@qq.com', 'justagoodname')
+ch0 <- f_weibo_login('xxxxxxxxxx', 'xxxxxxx')
+ch1 <- f_weibo_login('xxxxxxx', 'xxxxxxxxx')
 # 获取微博数据（这里只做了我自己的版本，10000是个足够大的数字）
 weibo_10000_0 <- f_weibo_get(cH=ch0, N=10000, hisnick='chenyibo')
 weibo_10000_1 <- f_weibo_get(cH=ch1, N=10000, hisnick='chenyibo')
